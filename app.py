@@ -8,9 +8,9 @@ model = joblib.load('railfallprediction.pkl')
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
-    features = np.array(data['features']).
+    features = np.array(data['features'])
     
-    `qreshape(1, -1)
+    qreshape(1, -1)
     prediction = model.predict(features)
     return jsonify({'prediction': prediction.tolist()})
 
